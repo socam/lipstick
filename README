@@ -1,0 +1,61 @@
+lipstick
+========
+
+lipstick is a research project aimed at offering easy to modify user experiences
+for varying mobile device form factors, e.g. handsets, netbooks, tablets.
+
+User experiences are written in QML.
+
+acknowledgements
+================
+
+lipstick builds heavily on the work of the meegotouchhome and meego-ux-daemon
+authors. Thanks.
+
+requirements
+============
+
+libX
+libXcomposite
+libXdamage
+libmlite (https://github.com/nemomobile/mlite)
+
+building
+========
+
+qmake
+make
+
+contents
+========
+
+src - a shared library
+plugin - a QML plugin which exposes stuff to the QML engine
+
+how to run lipstick
+===================
+
+1. Build the project.
+   This involves a library, and a qml plugin.
+   They should compile without errors/warnings.
+
+2. Place the library .so file under /usr/lib
+   
+   NOTE: 64 bit variants of some distributions use /usr/lib64 instead of /usr/lib
+
+2. Place the plugin .so file and the qmldir file under /usr/lib/qt4/imports/org/nemomobile/lipstick
+   
+   NOTE: The warning about /usr/lib64 applies here too
+
+3. Get yourself a desktop
+   If you haven't got anything better to use, grab the example
+   (http://github.com/nemomobile/lipstick-example-home/).
+
+   Build according to instructions, and run it.
+
+   Desktops use both the plugin and shared library generally, so 
+   both of them should be intact before you can run the example
+   
+   NOTE: if you use a properly packaged version of the library,
+   you won't need to go through this trouble
+
